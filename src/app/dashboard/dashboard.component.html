@@ -1,0 +1,270 @@
+<div id="divfst">
+  <div id="divsec">
+    <div id="header0" style="background-color: #325c93">
+      <mat-card-content>
+        <div style="display: flex">
+
+          <h3 style="font-family: cursive">Hello {{loggedUserDetails.username}}! This is dashboard</h3>
+
+          <div id="divthrd">
+            <a routerLink="/dashboard/add-item">
+              <button id="btn1" mat-raised-button color="E5D9B6">Add inventory</button>
+            </a>
+
+            <br/>
+
+            <a routerLink="/dashboard/search-item">
+              <button id="btn0" mat-raised-button color="E5D9B6">Search inventory</button>
+            </a>
+
+            <br/>
+
+
+            <a routerLink="/dashboard/my-profile"><button
+              mat-raised-button color="">My profile
+              </button>
+            </a>
+
+            <a routerLink="/dashboard/update-profile">
+              <button mat-raised-button color="#285430"
+              >Update profile
+              </button>
+            </a>
+
+            <br/>
+
+            <a routerLink="/">
+              <button (click)="logout()" id="btn3" mat-raised-button color="">Log out</button>
+            </a>
+
+          </div>
+        </div>
+
+      </mat-card-content>
+    </div>
+
+
+
+    <div id="routerDiv">
+      <router-outlet></router-outlet>
+    </div>
+
+
+
+  </div>
+
+
+  <!--  <div  style="width: 100%">-->
+
+  <!--    <mat-form-field style="margin-top: 1px" appearance="standard">-->
+  <!--      <mat-label>Search</mat-label>-->
+  <!--      <input matInput placeholder="Search" (keyup)="applyFilter($event)"/>-->
+  <!--    </mat-form-field>-->
+
+  <!--    <table class="mat-elevation-z8" style="font-size: 40px" mat-table matSort [dataSource]="dataSource">-->
+  <!--      <ng-container matColumnDef="id">-->
+  <!--        <th mat-header-cell *matHeaderCellDef mat-sort-header="">ID</th>-->
+  <!--        <td  mat-cell *matCellDef="let row">{{row.id}}</td>-->
+  <!--      </ng-container>-->
+  <!--      <ng-container matColumnDef="name">-->
+  <!--        <th mat-header-cell *matHeaderCellDef mat-sort-header="">Name</th>-->
+  <!--        <td mat-cell *matCellDef="let row">{{row.itemName}}</td>-->
+  <!--      </ng-container>-->
+  <!--      <ng-container matColumnDef="type">-->
+  <!--        <th mat-header-cell *matHeaderCellDef mat-sort-header="">Type</th>-->
+  <!--        <td mat-cell *matCellDef="let row">{{row.type}}</td>-->
+  <!--      </ng-container>-->
+  <!--      <ng-container matColumnDef="brand">-->
+  <!--        <th mat-header-cell *matHeaderCellDef mat-sort-header="">Brand</th>-->
+  <!--        <td mat-cell *matCellDef="let row">{{row.itemBrand}}</td>-->
+  <!--      </ng-container>-->
+  <!--      <ng-container matColumnDef="price">-->
+  <!--        <th mat-header-cell *matHeaderCellDef mat-sort-header="">Price</th>-->
+  <!--        <td mat-cell *matCellDef="let row">{{row.price}}</td>-->
+  <!--      </ng-container>-->
+  <!--      <ng-container matColumnDef="expiry">-->
+  <!--        <th mat-header-cell *matHeaderCellDef mat-sort-header="">Expiry</th>-->
+  <!--        <td mat-cell *matCellDef="let row">{{row.expiryDate}}</td>-->
+  <!--      </ng-container>-->
+
+  <!--      <ng-container matColumnDef="delete">-->
+  <!--        <th mat-header-cell *matHeaderCellDef mat-sort-header="">Delete</th>-->
+  <!--        <td mat-cell *matCellDef="let row">-->
+  <!--          <button style="margin: 5px" mat-raised-button color="warn" (click)="deleteItems(row)">Delete</button></td>-->
+  <!--      </ng-container>-->
+
+  <!--      <ng-container matColumnDef="edit">-->
+  <!--        <th mat-header-cell *matHeaderCellDef mat-sort-header="">Edit</th>-->
+  <!--        <td mat-cell *matCellDef="let row">-->
+  <!--          <button style="margin: 5px" mat-raised-button color="primary" type="button" (click)="editItems(row)"-->
+  <!--                                   data-toggle="modal" data-target="#exampleModal">Edit</button>-->
+  <!--        </td>-->
+  <!--      </ng-container>-->
+
+
+  <!--      <tr mat-header-row *matHeaderRowDef="displayedColumn"></tr>-->
+  <!--      <tr mat-row *matRowDef="let row; columns:displayedColumn"></tr>-->
+  <!--    </table>-->
+  <!--    <mat-paginator [pageSizeOptions]="[5,10,25,100]"-->
+  <!--                   aria-label="Select page of users">-->
+  <!--    </mat-paginator>-->
+  <!--  </div>-->
+
+
+</div>
+
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModal" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLable">Update item</h5>
+        <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+
+        <form #updateForm="ngForm" (ngSubmit)="update()">
+
+          <div>
+            <mat-form-field appearance="standard">
+              <mat-label>Product ID</mat-label>
+              <input
+                matInput placeholder="Product"
+                type="text" disabled #id [(ngModel)]="itemToUpdate.id" id="id" name="id"/>
+            </mat-form-field>
+          </div>
+
+          <div>
+            <mat-form-field appearance="standard">
+              <mat-label>Product name</mat-label>
+              <input
+                matInput placeholder="Product"
+                type="text" #name [(ngModel)]="itemToUpdate.itemName" id="itemName" name="itemName"/>
+            </mat-form-field>
+          </div>
+
+          <div>
+            <mat-form-field appearance="standard">
+              <mat-label>Item type</mat-label>
+              <input
+                matInput placeholder="Item type"
+                type="text" #type [(ngModel)]="itemToUpdate.type" id="itemType" name="itemType"/>
+            </mat-form-field>
+          </div>
+
+          <div>
+            <mat-form-field appearance="standard">
+              <mat-label>Price</mat-label>
+              <input
+                matInput placeholder="Price"
+                type="text" #price [(ngModel)]="itemToUpdate.price" id="price" name="price"/>
+            </mat-form-field>
+          </div>
+
+          <button (click)="update()" id="regButton" mat-raised-button color="primary"
+                  type="submit"
+                  class="btn-close" data-dismiss="modal" aria-label="Close">Update
+          </button>
+
+
+        </form>
+
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+<div class="modal fade" id="exampleModalUser" tabindex="-1" aria-labelledby="exampleModal" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLableUser">Your Profile</h5>
+        <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+
+        <h6>Username:  {{loggedUserDetails.username}}</h6>
+        <h6>Mobile:  {{loggedUserDetails.mobile}}</h6>
+        <h6>Address:  {{loggedUserDetails.address}}</h6>
+        <h6>Date of birth:  {{loggedUserDetails.dob}}</h6>
+
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="exampleModalUpdateUser" tabindex="-1" aria-labelledby="exampleModal" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLableUpdateUser">Update Details</h5>
+        <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+
+        <form #updateForm="ngForm" (ngSubmit)="updateUser()">
+          <div>
+            <mat-form-field appearance="standard">
+              <mat-label>User name</mat-label>
+              <input
+                disabled
+                matInput placeholder="Name"
+                type="text" #username [(ngModel)]="loggedUserDetails.username" id="username" name="username"/>
+            </mat-form-field>
+          </div>
+          <div>
+            <mat-form-field appearance="standard">
+              <mat-label>Mobile</mat-label>
+              <input
+                matInput placeholder="Number"
+                type="text" #mobile [(ngModel)]="loggedUserDetails.mobile" id="mobile" name="mobile"/>
+            </mat-form-field>
+          </div>
+          <div>
+            <mat-form-field appearance="standard">
+              <mat-label>Date of birth</mat-label>
+              <input
+                matInput placeholder="DOB"
+                type="text" #dob [(ngModel)]="loggedUserDetails.dob" id="dob" name="dob"/>
+            </mat-form-field>
+          </div>
+          <div>
+            <mat-form-field appearance="standard">
+              <mat-label>Address</mat-label>
+              <input
+                matInput placeholder="Address"
+                type="text" #address [(ngModel)]="loggedUserDetails.address" id="address" name="address"/>
+            </mat-form-field>
+          </div>
+          <button (click)="updateUser()" id="regButtonUpdate" mat-raised-button color="primary"
+                  type="submit"
+                  class="btn-close" data-dismiss="modal" aria-label="Close">Update
+          </button>
+
+
+        </form>
+
+
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+

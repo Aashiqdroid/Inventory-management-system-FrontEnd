@@ -1,0 +1,71 @@
+#divsec{
+  width: 100%;
+
+}
+#header0{
+  height: 75px;
+}
+#routerDiv{
+  margin-top: 20px;
+}
+#divfst{
+  display: flex;
+}
+#divthrd{
+  display: flex;
+  margin-left: 327px;
+  margin-top: 10px;
+}
+.content-table{
+  border-collapse: collapse;
+  margin: 25px 0;
+  font-size: 0.5cm;
+  min-width: 400px;
+}
+.content-table thead tr{
+  background-color: #81c0e7;
+  color: #ffffff;
+  text-align: left;
+}
+.content-table th,
+.content-table td{
+  padding: 4px 8px;
+}
+.content-table tbody tr{
+  border-bottom: 1px solid #ffffff;
+}
+.content-table tbody tr:nth-of-type(even){
+  background-color: rgba(227, 230, 246, 0.35);
+}
+.mat-form-field{
+  width: 100%;
+}
+.mt-2{
+  margin: 10px;
+
+}
+mat-card{
+
+}
+button{
+  margin-right: 5px;
+}
+#btn3,#btn4{
+  color: #ffff;
+  background-color: #ee3939;
+}
+table{
+  width: 100%;
+}
+th,td{
+  font-size: 17px;
+}
+h3{
+  font-weight: bolder;
+  color: #d5e6ff;
+  margin: 7px 0 0 5px;
+}
+
+
+
+

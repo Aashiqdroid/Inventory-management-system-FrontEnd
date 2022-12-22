@@ -1,0 +1,97 @@
+<div id="parentDiv">
+  <div class="centre">
+    <mat-card>
+      <mat-card-content>
+        <p>
+          <mat-toolbar color="primary">
+            <span>Add inventory</span>
+          </mat-toolbar>
+        </p>
+
+        <div *ngIf="redAlert" class="alert alert-danger alert-dismissible fade show" role="alert">
+          <strong>Error!</strong> Please fill all the data.
+          <button (click)="closeAlert()" type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+
+
+        <form (ngSubmit)="addItem()" #regForm="ngForm">
+
+          <div>
+            <mat-form-field appearance="outline">
+              <mat-label>Product name</mat-label>
+              <input
+                matInput placeholder="Product"
+                type="text" [(ngModel)]="item.itemName" id="itemName" name="itemName"/>
+            </mat-form-field>
+          </div>
+
+          <div>
+            <mat-form-field appearance="outline">
+              <mat-label>Item type</mat-label>
+              <input
+                matInput placeholder="Item type"
+                type="text" [(ngModel)]="item.type" id="itemType" name="itemType"/>
+            </mat-form-field>
+          </div>
+
+          <div>
+            <mat-form-field appearance="outline">
+              <mat-label>Price</mat-label>
+              <input
+                matInput placeholder="Price"
+                type="text" [(ngModel)]="item.price" id="price" name="price"/>
+            </mat-form-field>
+          </div>
+
+          <div>
+            <mat-form-field appearance="outline">
+              <mat-label>Brand</mat-label>
+              <mat-select [(ngModel)]="item.itemBrand" id="itemBrand" name="itemBrand" placeholder="Brand name">
+                <mat-option value="Dell">Dell</mat-option>
+                <mat-option value="Samsung">Samsung</mat-option>
+                <mat-option value="Apple">Apple</mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+
+          <div>
+            <mat-form-field appearance="outline">
+              <mat-label>Expiry date</mat-label>
+              <input matInput [matDatepicker]="picker"
+                     type="text" [(ngModel)]="item.expiryDate" id="expiryDate" name="expiryDate">
+              <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+              <mat-datepicker #picker></mat-datepicker>
+            </mat-form-field>
+          </div>
+
+          <button id="regButton" mat-raised-button color="primary"
+                  type="submit"
+                  class="btn btn-primary"
+          >Add item
+          </button>
+
+
+          <a routerLink="/dashboard">
+
+            <button id="regButton0" mat-raised-button color="warn"
+                    class="btn alert-danger"
+            >Cancel
+            </button>
+
+          </a>
+
+
+        </form>
+
+      </mat-card-content>
+    </mat-card>
+  </div>
+
+</div>
+
+
+
+
+

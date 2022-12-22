@@ -1,0 +1,81 @@
+# See http://help.github.com/ignore-files/ for more about ignoring files.
+
+# Compiled output
+/dist
+/tmp
+/out-tsc
+/bazel-out
+
+# Node
+/node_modules
+npm-debug.log
+yarn-error.log
+
+# IDEs and editors
+.idea/
+.project
+.classpath
+.c9/
+*.launch
+.settings/
+*.sublime-workspace
+
+# Visual Studio Code
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+.history/*
+
+# Miscellaneous
+/.angular/cache
+.sass-cache/
+/connect.lock
+/coverage
+/libpeerconnection.log
+testem.log
+/typings
+
+# System files
+.DS_Store
+Thumbs.db
+
+# Project exclude paths
+/src/app/auth/login/login.component.js
+/src/app/auth/login/login.component.spec.js
+/src/app/auth/register/register.component.js
+/src/app/auth/register/register.component.spec.js
+/src/app/auth/auth.component.js
+/src/app/auth/auth.component.spec.js
+/src/app/auth/auth.module.js
+/src/app/auth/auth.service.js
+/src/app/auth/authentication.guard.js
+/src/app/dashboard/additem/additem.component.js
+/src/app/dashboard/additem/additem.component.spec.js
+/src/app/dashboard/dashboard.component.js
+/src/app/dashboard/dashboard.component.spec.js
+/src/app/dashboard/dashboard.module.js
+/src/app/shared/shared.service.js
+/src/app/shared/shared.service.spec.js
+/src/app/starter/starter.component.js
+/src/app/starter/starter.component.spec.js
+/src/app/starter/starter.module.js
+/src/app/app.component.js
+/src/app/app.component.spec.js
+/src/app/app.module.js
+/src/app/item.js
+/src/app/item.service.js
+/src/app/item.service.spec.js
+/src/app/item.spec.js
+/src/app/login.service.js
+/src/app/login.service.spec.js
+/src/app/register.service.js
+/src/app/register.service.spec.js
+/src/app/user.js
+/src/app/user.spec.js
+/src/environments/environment.js
+/src/environments/environment.prod.js
+/src/main.js
+/src/polyfills.js
+/src/test.js

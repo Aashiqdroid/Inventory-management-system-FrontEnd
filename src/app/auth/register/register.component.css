@@ -1,0 +1,50 @@
+.example-button-row {
+  display: table-cell;
+  width: 490px;
+}
+#regButton{
+  margin-top: 20px;
+}
+.danger{
+  color: red;
+}
+
+form{
+  width: 45%;
+}
+img{
+  width: 650px;
+  height:400px;
+
+}
+h1{
+  margin-top: 12px;
+
+}
+
+mat-form-field{
+
+  width: 100%;
+
+}
+button{
+  margin-top: 10px;
+}
+
+mat-card{
+
+}
+.mat-elevation-z24{
+
+  margin: 33px 0 0 109px;
+  background-color: rgba(239, 241, 250, 0.63)
+
+}
+#validationCard{
+  background-color: rgba(238, 57, 57, 0.18);
+  margin-left: 30px;
+  width: 60%;
+}
+
+
+

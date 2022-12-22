@@ -1,0 +1,19 @@
+#regButton,#regButton1,#regButton2{
+  margin-top: 25px;
+  margin-left: 25px;
+}
+#table{
+  font-size: 40px;
+  width: 75%;
+
+  margin-top: 35px;
+  margin-left: 175px;
+}
+mat-form-field{
+  height: 45px;
+  margin: 3px;
+}
+.formFields{
+  display: flex;
+  margin-left: 175px;
+}

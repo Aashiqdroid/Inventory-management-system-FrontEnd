@@ -1,0 +1,69 @@
+<mat-card class="mat-elevation-z24">
+  <mat-card-content>
+    <div>
+      <h5>Update Details</h5>
+    </div>
+    <div>
+
+      <form [formGroup]="updateProfileForm" #updateForm="ngForm">
+        <div>
+          <mat-form-field disabled appearance="standard">
+            <mat-label>User name</mat-label>
+            <input
+              disabled
+              [ngModelOptions]="{standalone: true}"
+
+              matInput placeholder="Name"
+              type="text" #username [(ngModel)]="loggedUserDetails.username" id="" name="username"/>
+          </mat-form-field>
+        </div>
+        <div>
+          <mat-form-field appearance="standard">
+            <mat-label>Mobile</mat-label>
+            <input
+              formControlName="mobile"
+              matInput placeholder="Number"
+              type="text" #mobile [(ngModel)]="loggedUserDetails.mobile" id="mobile" name="mobile"/>
+          </mat-form-field>
+        </div>
+        <div>
+          <mat-form-field appearance="standard">
+            <mat-label>Date of birth</mat-label>
+            <input
+              formControlName="dob"
+
+              matInput placeholder="DOB"
+              type="text" #dob [(ngModel)]="loggedUserDetails.dob" id="dob" name="dob"/>
+          </mat-form-field>
+        </div>
+        <div>
+          <mat-form-field appearance="standard">
+            <mat-label>Address</mat-label>
+            <input
+              formControlName="address"
+
+              matInput placeholder="Address"
+              type="text" #address [(ngModel)]="loggedUserDetails.address" id="address" name="address"/>
+          </mat-form-field>
+        </div>
+        <div style="display: flex">
+          <a routerLink="/dashboard">
+            <button [disabled]="updateProfileForm.invalid" (click)="updateUser()" id="regButtonUpdate" mat-raised-button color="primary"
+                    type="submit">Update
+            </button>
+          </a>
+          <a routerLink="/dashboard">
+            <button style="margin-left: 5px" mat-raised-button color="warn">Cancel</button>
+          </a>
+
+        </div>
+
+
+      </form>
+
+
+    </div>
+
+  </mat-card-content>
+</mat-card>
+

@@ -1,0 +1,23 @@
+mat-form-field{
+  height: 1px;
+  margin: 10px 2px 5px 2px;
+  width: 100%;
+}
+#regButton{
+  margin-top: 19px;
+}
+#parentDiv{
+  width: 50%;
+  margin-top: 5px;
+
+  position: relative;
+
+  margin-left: 25%;
+
+}
+#regButton0{
+  margin-left: 10px;
+}
+.centre{
+}
+

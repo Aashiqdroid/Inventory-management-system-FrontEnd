@@ -1,0 +1,51 @@
+.mat-elevation-z24 {
+  max-width: 400px;
+  margin-left: 40px;
+  margin-top: 4px;
+  height: fit-content;
+
+
+  border: black;
+}
+
+.example-header-image {
+  background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
+  background-size: cover;
+}
+
+#mainDiv {
+  justify-content: center;
+  display: flex;
+  width: 100%;
+  height: 100vh;
+
+}
+#headDiv{
+  background-color: rgba(255, 255, 255, 0.89);
+  background-image: url("https://img.freepik.com/free-vector/simple-colorful-drawing-gradient-background_1159-31466.jpg?size=338&ext=jpg&ga=GA1.2.1868400648.1669108476&semt=sph");
+  height: 100%;
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+#header{
+  text-align: center;
+  //font-family: "Arial", serif;
+  font-family: 'Brush Script MT', cursive;font-size: 65px;
+  //font-style: oblique;
+  //font-weight: bolder;
+  color: #d5e6ff;
+
+}
+mat-card-actions{
+  background-image: url("https://img.freepik.com/premium-vector/flat-abstract-background-illustration-vector-art-with-elegant-shape_682235-47.jpg?size=626&ext=jpg&ga=GA1.2.1868400648.1669108476&semt=sph");
+
+}
+h4{
+  font-weight: bolder;
+  color: #f3e7e7;
+}
+
+

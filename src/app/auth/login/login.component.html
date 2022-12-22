@@ -1,0 +1,55 @@
+<div id="mainDiv" style="display: flex">
+  <mat-card class="mat-elevation-z24" style="width: 30%">
+    <mat-card-content>
+
+      <div >
+        <div style="padding: 5px 15px 0 15px">
+          <h1 style="color: red">Login</h1>
+          <form [formGroup]="loginForm" (ngSubmit)="userLogin()">
+            <div>
+              <mat-form-field appearance="standard">
+                <mat-label>Username</mat-label>
+                <input
+                  formControlName="username"
+                  matInput placeholder="Username"
+                  type="text" [(ngModel)]="user.username" id="username" name="username"/>
+              </mat-form-field>
+            </div>
+            <div>
+              <mat-form-field appearance="standard">
+                <mat-label>Password</mat-label>
+                <input
+                  formControlName="password"
+                  matInput placeholder="Password"
+                  type="password" [(ngModel)]="user.password" id="password" name="password"/>
+              </mat-form-field>
+            </div>
+            <a>
+              <button
+                [disabled]="loginForm.invalid"
+                id="regButton" mat-raised-button color="primary"
+                      type="submit"
+                      class="btn btn-primary">Login
+              </button>
+            </a>
+
+          </form>
+        </div>
+
+        <div style="padding-left: 15px">
+          <a href="auth/login" (click)="onClickForgotPassword()">Forgot password?</a>
+        </div>
+        <div style="padding: 5px 0 0 15px ">
+          <a href="auth/register">New user?</a>
+        </div>
+      </div>
+
+
+    </mat-card-content>
+  </mat-card>
+  <img style="width: 800px" height="500px" src="assets/6316.jpg" alt="vect2">
+</div>
+
+
+
+

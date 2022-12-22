@@ -1,0 +1,150 @@
+
+
+<div style="display: flex">
+  <div style="width: 40%">
+
+    <mat-card class="mat-elevation-z24">
+      <mat-card-content>
+
+        <h1 style="color: #0022ff">Registration</h1>
+
+        <form [formGroup]="myForm" style="width: 100%"  (ngSubmit)="userRegistration()">
+          <div>
+            <mat-form-field appearance="standard">
+              <mat-label>Username</mat-label>
+              <input
+                formControlName="username"
+                matInput placeholder="Username"
+                type="text"
+                [(ngModel)]="user.username"
+                id="username"
+                name="username"
+              />
+            </mat-form-field>
+            <small class="danger"> {{userExistsAlerts}}</small>
+            <small class="danger"> {{alert}}</small>
+          </div>
+
+          <div>
+            <mat-form-field appearance="legacy">
+              <mat-label>Password</mat-label>
+              <input
+                formControlName="password"
+                matInput placeholder="Password"
+                type="password" [(ngModel)]="user.password" id="password" name="password"/>
+            </mat-form-field>
+            <small class="danger"> {{passwordAlert}}</small>
+          </div>
+
+          <div>
+            <mat-form-field appearance="legacy">
+              <mat-label>Retype password</mat-label>
+              <input
+                formControlName="retypepassword"
+
+                matInput placeholder="Retype password"
+                type="password" [(ngModel)]="user.cpassword" id="cpassword" name="cpassword"/>
+            </mat-form-field>
+            <small class="danger"> {{alert}}</small>
+          </div>
+
+          <div>
+            <mat-form-field appearance="legacy">
+              <mat-label>Mobile</mat-label>
+              <input
+                formControlName="mobile"
+
+                matInput placeholder="Mobile"
+                type="text" [(ngModel)]="user.mobile" id="mobile" name="mobile"/>
+            </mat-form-field>
+            <small class="danger"> {{alert}}</small>
+          </div>
+
+
+          <div>
+            <mat-form-field appearance="legacy">
+              <mat-label>Address</mat-label>
+              <input
+                formControlName="address"
+
+                matInput placeholder="Address"
+                type="text" [(ngModel)]="user.address" id="address" name="address"
+              />
+            </mat-form-field>
+            <small class="danger"> {{alert}}</small>
+          </div>
+
+          <div>
+            <mat-form-field appearance="legacy">
+              <mat-label>Select your DOB</mat-label>
+              <input
+                formControlName="dob"
+
+                matInput [matDatepicker]="picker"
+                     type="text" [(ngModel)]="user.dob" id="dob" name="dob">
+              <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+              <mat-datepicker #picker></mat-datepicker>
+            </mat-form-field>
+          </div>
+
+          <a>
+            <button [disabled]="myForm.invalid" id="regButton"  mat-raised-button color="primary"
+                    type="submit"
+                    class="btn btn-primary">Register
+            </button>
+          </a>
+
+        </form>
+
+      </mat-card-content>
+    </mat-card>
+
+
+  </div>
+
+  <div>
+    <img  src="assets/8401.jpg" alt="vect">
+    <mat-card id="validationCard" class="mat-elevation-z23">
+
+      <mat-card-content>
+        <span>
+          <i class="fa fa-check-circle" style="color: green" *ngIf="myForm.controls.password.valid"></i>
+          <i class="fa fa-times-circle" style="color: red" *ngIf="myForm.controls.password.invalid"></i>
+          Password must contain 8 characters,<br/>Numbers, symbols (123456#@abc)
+        </span><br/>
+
+        <span>
+          <i class="fa fa-check-circle" style="color: green" *ngIf="myForm.controls.retypepassword.valid"></i>
+          <i class="fa fa-times-circle" style="color: red" *ngIf="myForm.controls.retypepassword.invalid"></i>
+          Password and confirm passwords should be same
+        </span><br/>
+        <span>
+          <i class="fa fa-check-circle" style="color: green" *ngIf="myForm.controls.mobile.valid"></i>
+          <i class="fa fa-times-circle" style="color: red" *ngIf="myForm.controls.mobile.invalid"></i>
+          Valid phone number (07********)
+        </span><br/>
+        <span>
+          <i class="fa fa-check-circle" style="color: green" *ngIf="myForm.controls.address.valid"></i>
+          <i class="fa fa-times-circle" style="color: red" *ngIf="myForm.controls.address.invalid"></i>
+          Valid address (1, example road, example city)
+        </span>
+      </mat-card-content>
+    </mat-card>
+
+
+  </div>
+
+
+
+
+
+
+</div>
+
+
+
+
+
+
+
+

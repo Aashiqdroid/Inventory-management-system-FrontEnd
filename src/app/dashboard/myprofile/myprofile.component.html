@@ -1,0 +1,31 @@
+<mat-card class="mat-elevation-z24">
+  <mat-card-content>
+
+    <div class="modal-header">
+      <h5 class="modal-title" id="exampleModalLableUser">Your Profile</h5>
+    </div>
+    <div class="modal-body">
+
+      <h6>Username:  {{loggedUserDetails.username}}</h6>
+      <h6>Mobile:  {{loggedUserDetails.mobile}}</h6>
+      <h6>Address:  {{loggedUserDetails.address}}</h6>
+      <h6>Date of birth:  {{loggedUserDetails.dob}}</h6>
+
+    </div>
+
+    <div style="display: flex">
+
+      <a routerLink="/dashboard/update-profile">
+        <button style="margin-left: 10px" mat-raised-button color="primary">Update profile</button>
+      </a>
+      <a routerLink="/dashboard">
+        <button style="margin-left: 4px" mat-raised-button color="warn">Cancel</button>
+      </a>
+
+    </div>
+
+
+
+  </mat-card-content>
+</mat-card>
+
